@@ -14,21 +14,22 @@ $ go get github.com/vafakaramzadegan/urlparser
 package main
 
 import (
-  "fmt"
-  "github.com/vafakaramzadegan/urlparser"
+	"fmt"
+
+	"github.com/vafakaramzadegan/urlparser"
 )
 
-parser, _ = Setup()
-
 func main() {
-  urls := []string{
-    "https://google.com/mail",
-    "ftp://192.168.1.23:24/foo/bar/somefile.sql",
-    "http://foo.bar.blahsite.com/index.html",
-  }
-  for _, url := range(urls) {
-    fmt.Println(parser.Parse(url))
-  }
+	parser, _ := urlparser.Setup()
+
+	urls := []string{
+		"https://google.com/mail",
+		"ftp://192.168.1.23:24/foo/bar/somefile.sql",
+		"http://foo.bar.blahsite.com/index.html",
+	}
+	for _, url := range urls {
+		fmt.Println(parser.Parse(url))
+	}
 }
 ```
 
